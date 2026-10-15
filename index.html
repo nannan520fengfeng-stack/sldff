@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f5f7" />
+    <meta name="description" content="一个轻量的个人工作台，用来整理任务、笔记和项目。" />
+    <title>Personal Workspace</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script type="module" src="/src/app.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="主导航">
+        <a class="brand" href="#overview" aria-label="Personal Workspace 首页">
+          <span class="brand-mark" aria-hidden="true">p.</span>
+          <span class="brand-name">personal<span>workspace</span></span>
+        </a>
+
+        <p class="nav-label">工作区</p>
+        <nav class="nav-list">
+          <a class="nav-link" href="#overview" data-page="overview">
+            <span class="nav-icon" aria-hidden="true">⌂</span><span>总览</span>
+          </a>
+          <a class="nav-link" href="#tasks" data-page="tasks">
+            <span class="nav-icon" aria-hidden="true">✓</span><span>任务</span>
+          </a>
+          <a class="nav-link" href="#notes" data-page="notes">
+            <span class="nav-icon" aria-hidden="true">▤</span><span>笔记</span>
+          </a>
+          <a class="nav-link" href="#projects" data-page="projects">
+            <span class="nav-icon" aria-hidden="true">◫</span><span>项目</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <span class="storage-dot" aria-hidden="true"></span>
+          <span>数据保存在此浏览器</span>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <span class="breadcrumb">PERSONAL SPACE <span>/</span> <strong id="current-section">总览</strong></span>
+          <time id="today-label"></time>
+        </header>
+        <div id="page-content" class="page-content" aria-live="polite"></div>
+      </main>
+    </div>
+
+    <dialog id="item-dialog" class="dialog">
+      <form id="item-form" class="dialog-form">
+        <div id="dialog-content"></div>
+        <div class="dialog-actions">
+          <button class="button button-quiet" type="button" data-action="close-dialog">取消</button>
+          <button class="button button-primary" type="submit">保存</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>
+
